@@ -1,0 +1,30 @@
+.header {
+  height: 100px;
+  background: #B3B39A;
+  color: #F6F8F3;
+  align-items: center;
+  display: flex;
+}
+
+.logo {
+  font-size: 48px;
+}
+
+.header-left {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+}
+
+.header-right {
+  display: flex;
+  width: 336px;
+  align-items: center;
+  gap: 80px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+}
