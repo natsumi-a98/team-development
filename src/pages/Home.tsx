@@ -3,7 +3,7 @@ import React from 'react';
 
 const Home: React.FC = () => {
   return (
-    <div>
+    <div className="container">
       <h2>Welcome to taniku</h2>
       <p>Your one-stop shop for beautiful indoor plants.</p>
       <section>
@@ -11,6 +11,7 @@ const Home: React.FC = () => {
         {/* ここにおすすめ商品のコンポーネントを追加 */}
       </section>
     </div>
+
   );
 };
 

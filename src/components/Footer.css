@@ -1,0 +1,36 @@
+.footer {
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #AAAAAA;
+}
+
+.footer-content {
+  width: 1440px;
+  height: 2460px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  display: inline;
+  margin: 0 15px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #233026;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-brand {
+  margin-top: 20px;
+  font-size: 1.2em;
+}

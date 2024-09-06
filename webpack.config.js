@@ -1,3 +1,4 @@
+const { Compress } = require('@mui/icons-material');
 const { resolve } = require('path');
 
 const path = require('path');
@@ -11,7 +12,7 @@ module.exports = {
   // モジュールバンドルを行った結果を出力する場所やファイル名の指定
   output: {
     path: path.join(__dirname, 'dist'), // "__dirname"はファイルが存在するディレクトリ
-    filename: '[name].js',  // [name]はentryで記述した名前（この設定ならbundle）
+    filename: 'bundle.js',  // [name]はentryで記述した名前（この設定ならbundle）
     publicPath: '/'  // 正しいパスに設定
   },
   // import文でファイル拡張子を書かずに名前解決するための設定
@@ -23,6 +24,8 @@ module.exports = {
     contentBase: path.join(__dirname, 'dist'), // webpack-dev-serverの公開フォルダ
     open: true, // サーバー起動時にブラウザを開く
     historyApiFallback: true, // これを追加することでReact Routerのリロードでの404エラーを防ぐ
+    port: 8080,
+    compress: true,
   },
   // モジュールに適用するルールの設定（ローダーの設定を行う事が多い）
   module: {
@@ -37,17 +40,6 @@ module.exports = {
       {
         test: /\.css$/,  // CSSファイルの処理
         use: ['style-loader', 'css-loader'],
-      },
-      {
-        test: /\.svg$/,  // SVGファイルの処理を追加
-        use: [
-          {
-            loader: 'svg-url-loader',
-            options: {
-              limit: 10000,  // サイズが10KB未満のSVGをData URIとして処理
-            }
-          }
-        ]
       }
     ]
   }

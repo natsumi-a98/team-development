@@ -12,7 +12,7 @@
     "target": "ES5", /* コンパイル後のjavascriptのバージョン指定　Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
     // "lib": [], tsが用意してくれている型の定義を指定して、コンパイルの時に定義内容を考慮してくれる
     // libを何も設定していない場合は、libをtargetで設定したバージョンに自動で合わせてくれる                                       /* 使用するjsライブラリ　Specify a set of bundled library declaration files that describe the target runtime environment. */
-    // "jsx": "preserve",   /* reactを使う際に必要な設定　jsxファイルをどうコンパイルするか　Specify what JSX code is generated. */
+    "jsx": "react",   /* reactを使う際に必要な設定　jsxファイルをどうコンパイルするか　Specify what JSX code is generated. */
     // 今後追加される新機能を実験的に使える
     // "experimentalDecorators": true,                   /* Enable experimental support for TC39 stage 2 draft decorators. */
     // "emitDecoratorMetadata": true,                    /* Emit design-type metadata for decorated declarations in source files. */
@@ -46,7 +46,7 @@
     // "emitDeclarationOnly": true,                      /* Only output d.ts files and not JavaScript files. */
     // "sourceMap": true,  /* ブラウザがtsを理解できるようにするための設定　Create source map files for emitted JavaScript files. */
     // "outFile": "./",    /*　出力ファイルを１つにまとめてくれる　今はほぼ使われていない古い設定Specify a file that bundles all outputs into one JavaScript file. If 'declaration' is true, also designates a file that bundles all .d.ts output. */
-    "outDir": "./", /* コンパイルする時のjsファイルの出力先を決める　　フォルダが入れ子構造になっている場合、自動で効率よく出力される　Specify an output folder for all emitted files. */
+    "outDir": "./dist", /* コンパイルする時のjsファイルの出力先を決める　　フォルダが入れ子構造になっている場合、自動で効率よく出力される　Specify an output folder for all emitted files. */
     // "rootDir": "./",  /* 上の設定が嫌な場合は、ここでルートを全て選択すると、効率関係なく、同じ階層のまま出力される　Specify the root folder within your source files. */
     // "removeComments": true,  出力の際にコメントアウトを除くかどうか  /* Disable emitting comments. */
     // "noEmit": true,                                   /* Disable emitting files from a compilation. */
@@ -101,15 +101,16 @@
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
   },
   "exclude": [ //コンパイルするファイルを選ぶ設定（excluでによって特定のファイルを除くことができる）
-    "compiler.ts", //ディレクトリ指定が必要
+    // "compiler.ts", //ディレクトリ指定が必要
     "*.spec.ts", //*（ワイルドカードと言う）...*以降のファイル以外を全て除く
     //"**/compiler.ts", どのディレクトリのcompiler.tsもコンパイルさせない
-    // "node_modules" tsの設定が書かれたファイルがまとまったもの
+    "node_modules", // tsの設定が書かれたファイルがまとまったもの
     // 初期設定で既にexcludeされている
     // ただし、上記のように一部のファイルをexcludeすると、node_modulesのexclude設定が上書きされて無くなってしまう
     // →そのため、何かexcludeする際はnode_modulesも必ず入れる
   ],
   "include": [
-    "index.tsx,"
+    // "index.tsx"
+    "src/**/*"
   ]
 }
