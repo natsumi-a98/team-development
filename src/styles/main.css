@@ -2,8 +2,11 @@ body {
   margin: 0 auto;
 }
 
-.container {
+.container,
+.category-container {
   max-width: 1440px;
+  margin: 0 auto;
+  justify-content: center;
   align-items: center;
 }
 
@@ -11,4 +14,20 @@ ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
+}
+
+.title {
+  color: #233026;
+  text-align: center;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 200;
+}
+
+h3 {
+  color: #233026;
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 200;
 }

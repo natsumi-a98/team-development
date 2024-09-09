@@ -1,5 +1,8 @@
 // お気に入りの追加と削除を行うボタン。
 import React from 'react';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import './FavoriteButton.css';
 
 interface FavoriteButtonProps {
   isFavorite: boolean;
@@ -8,8 +11,12 @@ interface FavoriteButtonProps {
 
 const FavoriteButton: React.FC<FavoriteButtonProps> = ({ isFavorite, onToggleFavorite }) => {
   return (
-    <button onClick={onToggleFavorite}>
-      {isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}
+    <button className='favorite-button' onClick={onToggleFavorite}>
+      {isFavorite ? (
+        <FavoriteIcon className='favorite-icon filled' />
+      ) : (
+        <FavoriteBorderIcon className='favorite-icon' />
+      )}
     </button>
   );
 };

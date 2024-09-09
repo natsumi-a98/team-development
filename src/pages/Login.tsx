@@ -3,7 +3,7 @@ import React from 'react';
 const Login: React.FC = () => {
   return (
     <div>
-      <h2>ログイン</h2>
+      <h2 className="title">ログイン</h2>
     </div>
   );
 };

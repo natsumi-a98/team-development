@@ -1,5 +1,5 @@
 .header {
-  background-color: #B3B39A;
+  background-color: #b3b39a;
   height: 100px;
   width: 100%;
   font-family: Inter;
@@ -9,7 +9,7 @@
 }
 
 .header-content {
-  max-width: 1440px;
+  max-width: 1140px;
   height: 100%;
   margin: 0 auto;
   display: flex;
@@ -31,7 +31,7 @@
 
 .logo {
   font-size: 48px;
-  color: #F6F8F3;
+  color: #f6f8f3;
   text-decoration: none;
   font-weight: 200;
 }
@@ -69,16 +69,16 @@
 
 .nav-link {
   margin: 0;
-  color: #F6F8F3;
+  color: #f6f8f3;
   text-decoration: none;
   font-size: 24px;
 }
 
 .shoppingCartIcon,
 .searchIcon,
-.favoriteIcon,
+.nav-favoriteIcon,
 .userIcon {
-  color: #F6F8F3;
+  color: #f6f8f3;
   font-size: 24px;
   margin-left: 80px;
 }

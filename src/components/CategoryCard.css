@@ -1,0 +1,44 @@
+/* .category-card {
+  cursor: pointer;
+  width: 350px;
+  text-align: center;
+  padding: 10px;
+  transition: transform 0.3s ease;
+} */
+
+/* .category-card:hover {
+  transform: scale(1.05);
+} */
+
+/* .category-card img {
+  width: 100%;
+  height: auto;
+  background-color: #eee;
+} */
+
+.category-card { /*写真が用意できたらここは削除*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  width: 350px;
+  gap: 10px;
+}
+
+.placeholder-box { /*写真が用意できたらここは削除*/
+  width: 350px;
+  height: 350px;
+  background-color: #eee;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-name {
+  margin: 0;
+  color: #233026;
+}

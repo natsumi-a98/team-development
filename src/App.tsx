@@ -15,6 +15,10 @@ import ProductDetail from './pages/ProductDetail';
 import Cart from './pages/Cart';
 import Order from './pages/Order';
 import OrderHistory from './pages/OrderHistory';
+import Mypage from './pages/Mypage';
+import Favorite from './pages/Favorite';
+import Products from './pages/Products';
+import Categories from './components/Categories'; // カテゴリページ
 
 
 const App: React.FC = () => {
@@ -35,6 +39,10 @@ const App: React.FC = () => {
           <Route path="/cart" element={<Cart />} />
           <Route path="/order" element={<Order />} />
           <Route path="/order-history" element={<OrderHistory />} />
+          <Route path="/mypage" element={<Mypage />} />
+          <Route path="/favorite" element={<Favorite />} />
+          <Route path="/categories" element={<Categories />} />
+          <Route path="/products" element={<Products />} />
         </Routes>
         <Footer />
       </div>

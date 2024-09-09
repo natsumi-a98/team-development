@@ -41,7 +41,7 @@ const Header: React.FC = () => {
             </li>
             <li className="header-right">
               <Link to='/favorite' className='nav-link'>
-                <FavoriteBorderIcon className='favoriteIcon' />
+                <FavoriteBorderIcon className='nav-favoriteIcon' />
               </Link>
             </li>
             <li className="header-right">

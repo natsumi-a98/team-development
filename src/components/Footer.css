@@ -1,24 +1,29 @@
 .footer {
-  padding: 20px;
+  padding: 0;
   text-align: center;
-  border-top: 1px solid #AAAAAA;
+  border-top: 1px solid #aaa;
 }
 
 .footer-content {
-  width: 1440px;
-  height: 2460px;
+  width: 100%;
+  max-width: 1440px;
   margin: 0 auto;
+  padding: 60px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer-links {
-  list-style: none;
+  list-style-type: none;
   padding: 0;
-  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 87px;
 }
 
 .footer-links li {
-  display: inline;
-  margin: 0 15px;
+  margin: 0;
 }
 
 .footer-links a {
@@ -31,6 +36,6 @@
 }
 
 .footer-brand {
-  margin-top: 20px;
+  margin: 0;
   font-size: 1.2em;
 }

@@ -1,0 +1,8 @@
+/* ProductList.css */
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  /* 商品カード間の間隔 */
+  justify-content: center;
+}

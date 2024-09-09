@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
         </ul>
       </div>
       <div className="footer-brand">
-        <span>&copy; 2024 Plants Shop</span>
+        <small>&copy; 2024 Plants Shop</small>
       </div>
     </footer>
   );

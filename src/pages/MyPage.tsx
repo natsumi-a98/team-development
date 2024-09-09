@@ -1,11 +1,13 @@
 import React from 'react';
 
-const MyPage: React.FC = () => {
+const Mypage: React.FC = () => {
   return (
-    <div>
-      <h2>マイページ</h2>
+    <div className="container">
+      <div>
+        <h2 className="title">マイページ</h2>
+      </div>
     </div>
   );
 };
 
-export default MyPage;
+export default Mypage;

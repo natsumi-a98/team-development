@@ -18,16 +18,19 @@ const Cart: React.FC = () => {
   };
 
   return (
-    <div className="cart">
-      {cartItems.map(item => (
-        <CartItem
-          key={item.id}
-          {...item}
-          // onRemove={handleRemove}
-          // onUpdateQuantity={handleUpdateQuantity}
-        />
-      ))}
-    </div>
+    <div className="container">
+      <h2 className="title">ショッピングカート</h2>
+      <div className="cart-container">
+        {cartItems.map(item => (
+          <CartItem
+            key={item.id}
+            {...item}
+            // onRemove={handleRemove}
+            // onUpdateQuantity={handleUpdateQuantity}
+          />
+        ))}
+      </div>
+      </div>
   );
 };
 
