@@ -1,5 +1,5 @@
 import React from 'react';
-import './CategoryCard.css';
+import '../styles/CategoryCard.css';
 
 interface CategoryCardProps {
   id: string;

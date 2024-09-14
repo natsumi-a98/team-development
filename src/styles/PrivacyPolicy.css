@@ -1,0 +1,70 @@
+.privacy-policy-container {
+  color: #233026;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.privacy-policy-section {
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.privacy-policy-section:last-of-type {
+  margin-bottom: 80px;
+}
+
+.privacy-policy-section-title {
+  font-size: 16px;
+  text-align: left;
+  text-decoration-line: underline;
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.privacy-policy-section-content {
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.privacy-policy-section-item {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: list-item;
+}
+
+.privacy-policy-section-item li {
+  margin: 0;
+  padding-left: 35px;
+  position: relative;
+  counter-increment: list-item;
+}
+
+.privacy-policy-section-item li::before {
+  content: counter(list-item) '. ';
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.privacy-policy-section-item p {
+  margin: 0;
+}
+
+.nested-list {
+  counter-reset: alphabet;
+}
+
+.nested-list li {
+  position: relative;
+  padding-left: 30px;
+  margin: 0;
+  counter-increment: alphabet;
+}
+
+.nested-list li::before {
+  content: counter(alphabet, lower-alpha) '. ';
+  position: absolute;
+  left: 0;
+  top: 0;
+}

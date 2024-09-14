@@ -18,7 +18,10 @@ import OrderHistory from './pages/OrderHistory';
 import Mypage from './pages/Mypage';
 import Favorite from './pages/Favorite';
 import Products from './pages/Products';
-import Categories from './components/Categories'; // カテゴリページ
+import Categories from './components/Categories';
+import LegalNotice from './pages/LegalNotice';
+import TermsOfService from './pages/TermsOfService';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 
 const App: React.FC = () => {
@@ -43,6 +46,9 @@ const App: React.FC = () => {
           <Route path="/favorite" element={<Favorite />} />
           <Route path="/categories" element={<Categories />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/legalnotice" element={<LegalNotice />} />
+          <Route path="/termsofservice" element={<TermsOfService />} />
+          <Route path="/privacypolicy" element={<PrivacyPolicy />} />
         </Routes>
         <Footer />
       </div>

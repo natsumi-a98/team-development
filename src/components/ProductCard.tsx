@@ -1,7 +1,7 @@
 // 商品の基本情報（名前、価格、画像）を表示し、お気に入り、カートに追加するボタンを持つ。
 import React, { useState } from 'react';
 import FavoriteButton from './FavoriteButton';
-import './ProductCard.css';
+import '../styles/ProductCard.css';
 
 interface ProductCardProps {
   id: string;

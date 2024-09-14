@@ -4,7 +4,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
 import ProductCard from './ProductCard';
-import './ProductList.css';
+import '../styles/ProductList.css';
 
 const ProductList: React.FC = () => {
   const products = useSelector((state: RootState) => state.products.products);

@@ -1,0 +1,26 @@
+.legal-notice-container {
+  color: #233026;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.legal-notice-section {
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.legal-notice-section:last-of-type {
+  margin-bottom: 80px;
+}
+
+.legal-notice-section-title {
+  font-size: 16px;
+  text-align: left;
+  text-decoration-line: underline;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.legal-notice-section-content {
+  margin: 0;
+}
