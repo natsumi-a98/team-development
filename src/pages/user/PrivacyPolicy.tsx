@@ -1,6 +1,6 @@
 // プライバシーポリシー
 import React from 'react';
-import '../styles/PrivacyPolicy.css';
+import '../../styles/user/PrivacyPolicy.css';
 
 const PrivacyPolicy: React.FC = () => {
   return (

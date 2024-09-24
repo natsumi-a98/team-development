@@ -1,0 +1,8 @@
+.password-reset-link {
+  color: #233026;
+  text-decoration: none;
+}
+
+.password-reset-link:hover {
+  text-decoration: underline;
+}

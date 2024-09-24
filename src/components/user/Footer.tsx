@@ -1,7 +1,7 @@
 // フッター用コンポーネント
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/Footer.css';
+import '../../styles/user/Footer.css';
 
 const Footer: React.FC = () => {
   return (
@@ -11,9 +11,9 @@ const Footer: React.FC = () => {
           <li><Link to="/legalnotice">特定商取引法に基づく表記</Link></li>
           <li><Link to="/termsofservice">利用規約</Link></li>
           <li><Link to="/privacypolicy">プライバシーポリシー</Link></li>
-          <li><Link to="/refund-policy">返金ポリシー</Link></li>
+          <li><Link to="/refundpolicy">返金ポリシー</Link></li>
           <li><Link to="/contact">お問い合せ</Link></li>
-          <li><Link to="/admin">管理者ページ</Link></li>
+          <li><Link to="/login">管理者ページ</Link></li>
         </ul>
       </div>
       <div className="footer-brand">

@@ -1,4 +1,4 @@
-.categories-grid {
+.category-list-grid {
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -35,20 +35,4 @@
   display: flex;
   justify-content: center;
   gap: 80px;
-}
-
-.view-all-button {
-  width: 362px;
-  height: 48px;
-  border-radius: 24px;
-  background-color: #d4daaa;
-  font-size: 24px;
-  font-weight: 200;
-  color: #f1f3ef;
-  cursor: pointer;
-  border: none;
-}
-
-.view-all-button:hover {
-  background-color: #c7cf8b;
 }

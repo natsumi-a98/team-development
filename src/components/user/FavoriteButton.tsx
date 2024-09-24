@@ -2,7 +2,7 @@
 import React from 'react';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import '../styles/FavoriteButton.css';
+import '../../styles/user/FavoriteButton.css';
 
 interface FavoriteButtonProps {
   isFavorite: boolean;

@@ -1,0 +1,8 @@
+.register-link {
+  color: #233026;
+  text-decoration: none;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}
