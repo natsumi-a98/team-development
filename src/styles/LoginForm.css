@@ -1,6 +1,21 @@
+.login-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.password-reset-container {
+  width: 100%;
+  max-width: 400px;
+  text-align: left;
+}
+
 .password-reset-link {
+  font-size: 16px;
   color: #233026;
   text-decoration: none;
+  display: block;
 }
 
 .password-reset-link:hover {

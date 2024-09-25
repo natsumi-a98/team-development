@@ -1,13 +1,14 @@
 import React from 'react';
 import BaseButton from '../components/user/BaseButton';
+import RegisterForm from '../components/RegisterForm';
 
 const PasswordReset: React.FC = () => {
   return (
     <div className="container">
       <div>
-        <h2 className="title">パスワードをリセットする</h2>
+        <h4 className="auth-title">パスワードをリセットする</h4>
       </div>
-      <section>
+      <section className='form-section'>
         <BaseButton
           text="送信"
           onClick={() => {

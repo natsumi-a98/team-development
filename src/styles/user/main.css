@@ -16,12 +16,20 @@ ul {
   margin: 0;
 }
 
-.title {
+h2,
+h4 {
   color: #233026;
   text-align: center;
-  font-size: 48px;
   font-style: normal;
   font-weight: 200;
+}
+
+.title {
+  font-size: 48px;
+}
+
+.auth-title {
+  font-size: 36px;
 }
 
 h3 {
@@ -35,4 +43,40 @@ h3 {
 p,
 label {
   color: #233026;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 400px;
+}
+
+label {
+  font-size: 16px;
+  text-align-last: left;
+}
+
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.auth-title {
+  margin-bottom: 20px;
+}
+
+.auth-form {
+  height: 32px;
+  font-size: 16px;
+}
+
+.form-section {
+  width: 100%;
+  max-width: 400px;
 }
