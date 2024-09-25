@@ -1,0 +1,16 @@
+.base-button {
+  width: 362px;
+  height: 48px;
+  border-radius: 24px;
+  background-color: #d4daaa;
+  font-size: 24px;
+  font-weight: 200;
+  color: #f1f3ef;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.base-button:hover {
+  background-color: #c7cf8b;
+}

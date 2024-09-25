@@ -1,6 +1,6 @@
 // 特定商取引法に基づく表記
 import React from 'react';
-import '../styles/LegalNotice.css';
+import '../../styles/user/LegalNotice.css';
 
 const LegalNotice: React.FC = () => {
   return (

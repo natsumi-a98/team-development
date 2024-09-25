@@ -1,6 +1,6 @@
 // 利用規約
 import React from 'react';
-import '../styles/TermsOfService.css';
+import '../../styles/user/TermsOfService.css';
 
 const TermsOfService: React.FC = () => {
   return (

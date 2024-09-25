@@ -49,6 +49,7 @@
 
 .privacy-policy-section-item p {
   margin: 0;
+  margin-bottom: 30px;
 }
 
 .nested-list {
@@ -60,6 +61,10 @@
   padding-left: 30px;
   margin: 0;
   counter-increment: alphabet;
+}
+
+.privacy-policy-section-item li:nth-child(5) {
+  margin-bottom: 30px;
 }
 
 .nested-list li::before {

@@ -1,9 +1,9 @@
 // 複数のCartItemを表示し、カート全体の管理を行う
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../redux/store';
+import { RootState } from '../../redux/store';
 import CartItem from './CartItem';
-import { removeItem, updateQuantity } from '../redux/slices/cartSlice';
+import { removeItem, updateQuantity } from '../../redux/slices/cartSlice';
 
 const Cart: React.FC = () => {
   const dispatch = useDispatch();
