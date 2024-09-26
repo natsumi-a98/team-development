@@ -1,8 +1,7 @@
-// アプリケーション全体のルートコンポーネント。React Routerを使ってページを切り替える
 import React from 'react';
-// import { Route, Switch } from 'react-router-dom';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { ScrollToTop } from './components/user/ScrollToTop';
+
 // ユーザー側
 import Header from './components/user/Header';
 import Footer from './components/user/Footer';
@@ -23,8 +22,17 @@ import LegalNotice from './pages/user/LegalNotice';
 import TermsOfService from './pages/user/TermsOfService';
 import PrivacyPolicy from './pages/user/PrivacyPolicy';
 import RefundPolicy from './pages/user/RefundPolicy';
-// 管理者側
 
+// 管理者側
+import AdminHeader from './components/admin/AdminHeader';
+import Sidebar from './components/admin/Sidebar';
+import AdminHome from './pages/admin/AdminHome';
+import Notice from './pages/admin/NoticeManagement';
+import Logout from './pages/admin/Logout';
+import ProductManagement from './pages/admin/ProductManagement';
+import CategoryManagement from './pages/admin/CategoryManagement';
+import CustomerManagement from './pages/admin/CustomerManagement';
+import ContactManagement from './pages/admin/ContactManagement';
 
 // 共通
 import Login from './pages/Login';
@@ -37,33 +45,69 @@ const App: React.FC = () => {
   const noHeaderFooterPages = ['/login', '/register', '/passwordreset'];
   const isNoHeaderFooterPage = noHeaderFooterPages.includes(location.pathname);
 
+  const adminRoutes = [
+    '/admin-home', '/product-management', '/category-management', '/customer-management', '/contact-management',
+    '/notice', 'logout'
+  ];
+  const isAdminPage = adminRoutes.some(route => location.pathname.startsWith(route));
+
   return (
     <div>
-      {!isNoHeaderFooterPage && <Header />}
-        <Routes>
-          {/* <Route exact path="/" element={<Home />} /> */}
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/category" element={<Category />} />
-          <Route path="/diary" element={<Diary />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/product/:id" element={<ProductDetail />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/order" element={<Order />} />
-          <Route path="/order-history" element={<OrderHistory />} />
-          <Route path="/mypage" element={<Mypage />} />
-          <Route path="/favorite" element={<Favorite />} />
-          <Route path="/categorylist" element={<CategoryList />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/legalnotice" element={<LegalNotice />} />
-          <Route path="/termsofservice" element={<TermsOfService />} />
-          <Route path="/privacypolicy" element={<PrivacyPolicy />} />
-          <Route path="/refundpolicy" element={<RefundPolicy />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/passwordreset" element={<PasswordReset />} />
-        </Routes>
-      {!isNoHeaderFooterPage && <Footer />}
+      {/* 管理者側 */}
+      {isAdminPage && (
+        <div className="admin-layout">
+          <AdminHeader />
+          <div className="admin-body">
+            <Sidebar />
+            <div className="admin-content">
+              <Routes>
+                <Route path="/admin-home" element={<AdminHome />} />
+                <Route path="/notice" element={<Notice />} />
+                <Route path="/logout" element={<Logout />} />
+                <Route path="/product-management" element={<ProductManagement />} />
+                <Route path="/category-management" element={<CategoryManagement />} />
+                <Route path="/customer-management" element={<CustomerManagement />} />
+                <Route path="/contact-management" element={<ContactManagement />} />
+              </Routes>
+            </div>
+          </div>
+        </div>
+      )}
+      {/* ユーザー側 */}
+      {!isNoHeaderFooterPage && !isAdminPage && <Header />}
+      <Routes>
+        {/* 共通 */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/passwordreset" element={<PasswordReset />} />
+
+        {!isAdminPage && (
+          <>
+            {/* ユーザー側 */}
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/category" element={<Category />} />
+            <Route path="/diary" element={<Diary />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/order" element={<Order />} />
+            <Route path="/order-history" element={<OrderHistory />} />
+            <Route path="/mypage" element={<Mypage />} />
+            <Route path="/favorite" element={<Favorite />} />
+            <Route path="/categorylist" element={<CategoryList />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/legalnotice" element={<LegalNotice />} />
+            <Route path="/termsofservice" element={<TermsOfService />} />
+            <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+            <Route path="/refundpolicy" element={<RefundPolicy />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/passwordreset" element={<PasswordReset />} />
+          </>
+        )}
+      </Routes>
+      {!isNoHeaderFooterPage && !isAdminPage && <Footer />}
     </div>
   );
 };
@@ -76,5 +120,6 @@ const AppWrapper: React.FC = () => {
     </Router>
   );
 };
+
 
 export default AppWrapper;
