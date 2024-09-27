@@ -22,8 +22,8 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({ id, name, onClickCategory }) 
   return (
     <div className='category-box' onClick={() => onClickCategory(id)}>
       {/* 画像の代わりに灰色のボックスを表示 */}
-      <div className="category-placeholder-box"></div>
-      <h3 className="category-name">{name}</h3>
+      <div className='category-placeholder-box'></div>
+      <h3 className='category-name'>{name}</h3>
     </div>
   );
 };

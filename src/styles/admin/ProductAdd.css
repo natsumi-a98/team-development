@@ -1,0 +1,6 @@
+.add-product-button {
+  align-self: flex-end;
+  position: absolute;
+  right: 80px;
+  width: 250px;
+}

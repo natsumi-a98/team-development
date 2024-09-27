@@ -4,8 +4,8 @@ import CategoryList from '../../components/user/CategoryList';
 
 const Home: React.FC = () => {
   return (
-    <div className="container">
-      <h2 className="title">カテゴリ</h2>
+    <div className='container'>
+      <h2 className='title'>カテゴリ</h2>
       <section>
         <CategoryList />{/* カテゴリのコンポーネントを表示 */}
       </section>
