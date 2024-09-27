@@ -4,17 +4,17 @@ import '../../styles/user/PrivacyPolicy.css';
 
 const PrivacyPolicy: React.FC = () => {
   return (
-    <div className="container">
-      <h2 className="title">プライバシーポリシー</h2>
-      <div className="privacy-policy-container">
-        <section className="privacy-policy-section">
-          <h3 className="privacy-policy-section-title">
+    <div className='container'>
+      <h2 className='title'>プライバシーポリシー</h2>
+      <div className='privacy-policy-container'>
+        <section className='privacy-policy-section'>
+          <h3 className='privacy-policy-section-title'>
             個人情報の取り扱いに関する方針
           </h3>
-          <p className="privacy-policy-section-content">
+          <p className='privacy-policy-section-content'>
             Plants Shopでは、個人情報に関する法令及び社内規定等を遵守し、お客様からお預かりしている大切な個人情報の適正な管理・利用と保護に努めます。
           </p>
-          <ul className="privacy-policy-section-item">
+          <ul className='privacy-policy-section-item'>
             <li>お客様の個人情報を収集させていただくにあたりましては、お客様にその目的を明らかにし、同意のもとに行うものとし、その収集目的の範囲内で利用致します。</li>
             <li>お客様の個人情報は責任をもって管理し、お客様の利益と権利を保護する為に必要な場合以外は第三者に開示・提供することはございません。</li>
             <li>お預かりした個人情報を利用し、お客様へサービス、または情報等を提供するために業務を外部業者に委託する場合は当社の厳正な管理のもと、必要最小限の範囲で、お客様情報の預託をさせていただくことがございます。</li>
@@ -22,16 +22,16 @@ const PrivacyPolicy: React.FC = () => {
             <li>お客様が個人情報の確認、訂正、削除等を希望される場合は弊社の担当窓口までご連絡いただければ、合理的な範囲で速やかに対応いたします。</li>
           </ul>
         </section>
-        <section className="privacy-policy-section">
-          <h3 className="privacy-policy-section-title">
+        <section className='privacy-policy-section'>
+          <h3 className='privacy-policy-section-title'>
             個人情報利用目的等について
           </h3>
-          <ul className="privacy-policy-section-item">
+          <ul className='privacy-policy-section-item'>
             <li>利用目的</li>
-            <p className="privacy-policy-section-content">
+            <p className='privacy-policy-section-content'>
               当社に、ご提供頂いた個人情報は次のような目的で利用させていただきます。
             </p>
-            <ul className="nested-list">
+            <ul className='nested-list'>
               <li>ご注文いただいた商品をお届け又は手配するため</li>
               <li>商品・サービス・イベント等の情報を提供するため</li>
               <li>商品・サービスの代金の請求及び回収のため</li>

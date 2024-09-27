@@ -1,11 +1,11 @@
-// 管理者側ログアウト
+// 日記管理ページ
 import React from 'react';
 
-const Logout: React.FC = () => {
+const DiaryManagement: React.FC = () => {
   return (
     <div className='admin-container'>
       <div className="admin-top-container">
-        <h2 className='admin-title'>ログアウト</h2>
+        <h2 className='admin-title'>日記管理</h2>
         <section>
         </section>
       </div>
@@ -14,4 +14,4 @@ const Logout: React.FC = () => {
   );
 };
 
-export default Logout;
+export default DiaryManagement;

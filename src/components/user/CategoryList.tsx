@@ -21,7 +21,7 @@ const CategoryList: React.FC = () => {
   const navigate = useNavigate(); // ナビゲーション関数
 
   const handleViewAllCategoryList = () => {
-    console.log("すべてのカテゴリを見る");
+    console.log('すべてのカテゴリを見る');
   };
 
   const handleViewAllProducts = () => {
@@ -29,8 +29,8 @@ const CategoryList: React.FC = () => {
   };
 
   return (
-    <div className="category-container">
-      <div className="category-list-grid">
+    <div className='category-container'>
+      <div className='category-list-grid'>
         {categories.map(category => (
           <CategoryBox
             key={category.id}
@@ -42,16 +42,16 @@ const CategoryList: React.FC = () => {
         ))}
       </div>
 
-      <div className="button-container">
+      <div className='button-container'>
         <BaseButton
-          text="すべてのカテゴリを見る"
+          text='すべてのカテゴリを見る'
           onClick={handleViewAllCategoryList}
-          className="view-all-button"
+          className='view-all-button'
         />
         <BaseButton
-          text="すべての商品を見る"
+          text='すべての商品を見る'
           onClick={handleViewAllProducts}
-          className="view-all-button"
+          className='view-all-button'
         />
       </div>
     </div>

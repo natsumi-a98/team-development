@@ -3,10 +3,12 @@ import React from 'react';
 
 const AdminHome: React.FC = () => {
   return (
-    <div className="container">
-      <h2 className="title">ホーム</h2>
-      <section>
-      </section>
+    <div className='admin-container'>
+      <div className="admin-top-container">
+        <h2 className='admin-title'>ホーム</h2>
+        <section>
+        </section>
+      </div>
     </div>
 
   );

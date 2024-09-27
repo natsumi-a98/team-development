@@ -25,9 +25,9 @@ interface ProductBoxProps {
 
   return (
     <div className='product-box'>
-      <div className="image-container">
-        {/* <img src="{image}" alt="{name}" className="product-image" /> */}
-        <div className="product-placeholder-box"></div>
+      <div className='image-container'>
+        {/* <img src='{image}' alt='{name}' className='product-image' /> */}
+        <div className='product-placeholder-box'></div>
         <FavoriteButton isFavorite={isFavorite} onToggleFavorite={handleToggleFavorite} />
       </div>
       <h3>{name}</h3>

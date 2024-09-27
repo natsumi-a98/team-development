@@ -7,6 +7,10 @@
   align-items: center;
   padding: 0 24px;
   box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
 .admin-header-content {

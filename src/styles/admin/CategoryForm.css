@@ -1,0 +1,47 @@
+.category-add-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.category-form-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 30px;
+}
+
+.category-form-field label {
+  width: 100px;
+  text-align: right;
+  margin-right: 60px;
+}
+
+.category-form-field input,
+.category-form-field textarea {
+  flex-grow: 1;
+  padding: 8px;
+}
+
+.image-upload {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.image-preview {
+  display: flex;
+}
+
+.preview-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+}
+
+.add-image-button {
+  margin-left: 20px;
+}
