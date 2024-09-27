@@ -1,19 +1,13 @@
-//JWT トークンを検証するミドルウェア
-
+// authMiddleware.js
 import jwt from 'jsonwebtoken';
 
-export const verifyToken = (req, res, next) => {
+export const authenticateToken = (req, res, next) => {
   const token = req.headers['authorization'];
+  if (!token) return res.status(401).send('アクセスが拒否されました。');
 
-  if (!token) {
-    return res.status(403).json({ message: 'トークンがありません。' });
-  }
-
-  try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.userId = decoded.id;
+  jwt.verify(token.split(' ')[1], process.env.JWT_SECRET, (err, user) => {
+    if (err) return res.status(403).send('トークンが無効です。');
+    req.user = user;
     next();
-  } catch (err) {
-    res.status(401).json({ message: '無効なトークンです。' });
-  }
+  });
 };

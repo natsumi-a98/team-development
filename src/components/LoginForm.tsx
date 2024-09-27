@@ -1,27 +1,23 @@
 import React, { useState } from 'react';
-import { loginAdmin, loginUser } from '../api';
+import { Link } from 'react-router-dom';
+import '../styles/LoginForm.css';
 
-const LoginForm: React.FC<{ onLoginSuccess: (token: string) => void }> = ({ onLoginSuccess }) => {
+const LoginForm: React.FC<{ onLoginSuccess: () => void }> = ({ onLoginSuccess }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
 
-  const handleSubmit = async (event: React.FormEvent, isAdmin: boolean) => {
+  const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    setError('');
 
-    try {
-      const { token } = isAdmin
-        ? await loginAdmin(email, password)
-        : await loginUser(email, password);
-      onLoginSuccess(token);
-    } catch (err) {
-      setError((err as Error).message);
-    }
+    // ログイン処理の実装
+    // 例: API呼び出しや認証のチェックなど
+
+    // ログイン成功後にonLoginSuccessを呼び出す
+    onLoginSuccess();
   };
 
   return (
-    <form onSubmit={(e) => handleSubmit(e, true)} className="login-form-container">
+    <form onSubmit={handleSubmit} className="login-form-container"> {/* formタグを追加 */}
       <div className="form-field">
         <label htmlFor="email">メールアドレス</label>
         <input
@@ -29,6 +25,7 @@ const LoginForm: React.FC<{ onLoginSuccess: (token: string) => void }> = ({ onLo
           id="email"
           type="email"
           placeholder='メールアドレス'
+          name='email'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -41,13 +38,17 @@ const LoginForm: React.FC<{ onLoginSuccess: (token: string) => void }> = ({ onLo
           id="password"
           type="password"
           placeholder='パスワード'
+          name='password'
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
       </div>
-      {error && <p className="error-message">{error}</p>}
-      <button type="submit">ログイン</button>
+      <div className="password-reset-container">
+        <Link to="/passwordreset" className="password-reset-link">
+          パスワードを忘れた方
+        </Link>
+      </div>
     </form>
   );
 };

@@ -1,25 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { registerUser } from '../api'; // API関数をインポート
 
 const RegisterForm: React.FC = () => {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    try {
+      await registerUser(firstName, lastName, email, password);
+      alert('ユーザー登録成功');
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
   return (
-    <div className="register-form-container">
+    <form onSubmit={handleSubmit} className="register-form-container">
       <div className="form-field">
         <label>姓</label>
-        <input className='auth-form' type="text" placeholder='姓' name='email'/>
+        <input className='auth-form' type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
       </div>
       <div className="form-field">
         <label>名</label>
-        <input className='auth-form' type="text" placeholder='名' name='password'/>
+        <input className='auth-form' type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} />
       </div>
       <div className="form-field">
         <label>メールアドレス</label>
-        <input className='auth-form' type="text" placeholder='メールアドレス' name='email'/>
+        <input className='auth-form' type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
       </div>
       <div className="form-field">
         <label>パスワード</label>
-        <input className='auth-form' type="text" placeholder='パスワード' name='password'/>
+        <input className='auth-form' type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
       </div>
-    </div>
+      <button type="submit">アカウント作成</button>
+    </form>
   );
 };
 

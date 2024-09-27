@@ -26,3 +26,19 @@ export const loginUser = async (req, res) => {
     res.status(500).json({ message: 'サーバーエラー', error: err.message });
   }
 };
+
+// 新規登録処理
+
+export const registerUser = async (req, res) => {
+  const { first_name, last_name, email, password } = req.body;
+  try {
+    const hashedPassword = await bcrypt.hash(password, 10);
+    await db.query(
+      'INSERT INTO users (first_name, last_name, email, password) VALUES (?, ?, ?, ?)',
+      [first_name, last_name, email, hashedPassword]
+    );
+    res.status(201).json({ message: 'ユーザー登録成功' });
+  } catch (err) {
+    res.status(500).json({ message: 'サーバーエラー', error: err.message });
+  }
+};
