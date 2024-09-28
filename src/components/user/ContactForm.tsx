@@ -16,17 +16,17 @@ const ContactForm: React.FC = () => {
     <form onSubmit={handleSubmit}>
       <label>
         Name:
-        <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+        <input type='text' value={name} onChange={(e) => setName(e.target.value)} />
       </label>
       <label>
         Email:
-        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        <input type='email' value={email} onChange={(e) => setEmail(e.target.value)} />
       </label>
       <label>
         Message:
         <textarea value={message} onChange={(e) => setMessage(e.target.value)} />
       </label>
-      <button type="submit">Send</button>
+      <button type='submit'>Send</button>
     </form>
   );
 };

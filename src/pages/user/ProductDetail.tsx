@@ -12,7 +12,7 @@ const ProductDetail: React.FC = () => {
   }
 
   return (
-    <div className="product-detail">
+    <div className='product-detail'>
       <img src={product.image} alt={product.name} />
       <h2>{product.name}</h2>
       <p>{product.description}</p>

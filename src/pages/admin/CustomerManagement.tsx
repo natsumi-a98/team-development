@@ -3,10 +3,12 @@ import React from 'react';
 
 const CustomerManagement: React.FC = () => {
   return (
-    <div className="container">
-      <h2 className="title">顧客管理</h2>
-      <section>
-      </section>
+    <div className='admin-container'>
+      <div className="admin-top-container">
+        <h2 className='admin-title'>顧客管理</h2>
+        <section>
+        </section>
+      </div>
     </div>
 
   );

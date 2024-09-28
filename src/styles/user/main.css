@@ -1,3 +1,4 @@
+/* ユーザー側 */
 body {
   margin: 0 auto;
 }
@@ -28,9 +29,6 @@ h4 {
   font-size: 48px;
 }
 
-.auth-title {
-  font-size: 36px;
-}
 
 h3 {
   color: #233026;
@@ -43,6 +41,11 @@ h3 {
 p,
 label {
   color: #233026;
+}
+
+/* ユーザー認証 */
+.auth-title {
+  font-size: 36px;
 }
 
 .form-field {
@@ -79,4 +82,37 @@ label {
 .form-section {
   width: 100%;
   max-width: 400px;
+}
+
+/* 管理者側 */
+.admin-container {
+  margin-left: 250px;
+  margin-top: 160px;
+  color: #233026;
+}
+
+.admin-title {
+  color: #233026;
+  text-align: center;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 24px;
+  margin: 0;
+}
+
+.admin-top-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 160px);
+  margin: 0 auto;
+  margin-bottom: 60px;
+}
+
+.admin-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 160px);
+  margin: 0 auto;
 }

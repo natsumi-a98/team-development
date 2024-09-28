@@ -20,7 +20,7 @@ const ProductList: React.FC = () => {
   };
 
   return (
-    <div className="product-list-container">
+    <div className='product-list-container'>
       <div className='product-list'>
         {products.map(product => (
           <ProductBox
