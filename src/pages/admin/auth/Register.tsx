@@ -1,6 +1,6 @@
 import React from 'react';
-import BaseButton from '../../components/user/BaseButton';
-import RegisterForm from '../../components/auth/RegisterForm';
+import BaseButton from '../../../components/user/BaseButton';
+import RegisterForm from '../../../components/auth/RegisterForm';
 
 const Register: React.FC = () => {
   return (
