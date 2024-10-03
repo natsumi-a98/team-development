@@ -1,8 +1,9 @@
 import React from 'react';
 import BaseButton from '../../../components/user/BaseButton';
 import RegisterForm from '../../../components/auth/RegisterForm';
+import '../../../styles/Register.css'
 
-const Register: React.FC = () => {
+const AdminRegister: React.FC = () => {
   return (
     <div className='container'>
       <div className='auth-container'>
@@ -11,16 +12,16 @@ const Register: React.FC = () => {
         </div>
         <section className='form-section'>
           <RegisterForm />
-          <BaseButton
-            text='アカウント作成'
-            onClick={() => {
-            }}
-            className='register-button'
-          />
         </section>
+        <BaseButton
+          text='アカウント作成'
+          onClick={() => {
+          }}
+          className='register-button'
+        />
       </div>
     </div>
   );
 };
 
-export default Register;
+export default AdminRegister;

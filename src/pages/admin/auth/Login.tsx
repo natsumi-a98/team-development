@@ -4,7 +4,7 @@ import LoginForm from '../../../components/auth/LoginForm';
 import BaseButton from '../../../components/user/BaseButton';
 import '../../../styles/Login.css';
 
-const Login: React.FC = () => {
+const AdminLogin: React.FC = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -23,7 +23,7 @@ const Login: React.FC = () => {
       <div className='auth-container'>
         <h4 className='auth-title'>ログイン</h4>
         <div className='register-container'>
-          <Link to='/register' className='register-link'>
+          <Link to='/admin/auth/register' className='register-link'>
             アカウントを新規作成する
           </Link>
         </div>
@@ -48,7 +48,7 @@ const Login: React.FC = () => {
   );
 };
 
-export default Login;
+export default AdminLogin;
 
 // Login.tsx以下サーバーサイドとの連携する場合のコード
 // import React, { useState } from 'react';

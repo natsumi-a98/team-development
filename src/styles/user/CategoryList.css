@@ -27,7 +27,6 @@
 
 .category-card:hover {
   transform: scale(1.05);
-  /* ホバー時に少し拡大 */
 }
 
 .user-button-container {

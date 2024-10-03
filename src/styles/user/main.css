@@ -51,9 +51,11 @@ label {
 .form-field {
   display: flex;
   flex-direction: column;
-  margin-bottom: 30px;
   width: 100%;
   max-width: 550px;
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
 }
 
 label {
@@ -78,6 +80,7 @@ label {
 .auth-form {
   height: 32px;
   font-size: 16px;
+  padding: 0;
 }
 
 .form-section {

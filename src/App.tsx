@@ -36,10 +36,9 @@ import CustomerManagement from './pages/admin/CustomerManagement';
 import ContactManagement from './pages/admin/ContactManagement';
 import ProductAdd from './pages/admin/ProductAdd';
 import CategoryAdd from './pages/admin/CategoryAdd';
-
-// 共通
-import Login from './pages/admin/auth/Login';
-import Register from './pages/admin/auth/Register';
+// 管理者側ユーザー認証
+import AdminLogin from './pages/admin/auth/Login';
+import AdminRegister from './pages/admin/auth/Register';
 import PasswordReset from './pages/admin/auth/PasswordReset';
 
 const App: React.FC = () => {
@@ -98,8 +97,8 @@ const App: React.FC = () => {
       <Routes>
 
         {/* 共通 */}
-        <Route path='/admin/auth/login' element={<Login />} />
-        <Route path='/admin/auth/register' element={<Register />} />
+        <Route path='/admin/auth/login' element={<AdminLogin />} />
+        <Route path='/admin/auth/register' element={<AdminRegister />} />
         <Route path='/admin/auth/passwordreset' element={<PasswordReset />} />
 
         {!isAdminPage && (
@@ -122,8 +121,8 @@ const App: React.FC = () => {
             <Route path='/termsofservice' element={<TermsOfService />} />
             <Route path='/privacypolicy' element={<PrivacyPolicy />} />
             <Route path='/refundpolicy' element={<RefundPolicy />} />
-            <Route path='/auth/login' element={<Login />} />
-            <Route path='/auth/register' element={<Register />} />
+            <Route path='/auth/login' element={<AdminLogin />} />
+            <Route path='/auth/register' element={<AdminRegister />} />
             <Route path='/auth/passwordreset' element={<PasswordReset />} />
           </>
         )}
