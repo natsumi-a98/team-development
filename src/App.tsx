@@ -38,17 +38,17 @@ import ProductAdd from './pages/admin/ProductAdd';
 import CategoryAdd from './pages/admin/CategoryAdd';
 
 // 共通
-import Login from './pages/auth/Login';
-import Register from './pages/auth/Register';
-import PasswordReset from './pages/auth/PasswordReset';
+import Login from './pages/admin/auth/Login';
+import Register from './pages/admin/auth/Register';
+import PasswordReset from './pages/admin/auth/PasswordReset';
 
 const App: React.FC = () => {
   const location = useLocation();
 
   const noHeaderFooterPages = [
-    '/auth/login',
-    '/auth/register',
-    '/auth/passwordreset'
+    '/admin/auth/login',
+    '/admin/auth/register',
+    '/admin/auth/passwordreset'
   ];
 
   const isNoHeaderFooterPage = noHeaderFooterPages.includes(location.pathname);
@@ -98,9 +98,9 @@ const App: React.FC = () => {
       <Routes>
 
         {/* 共通 */}
-        <Route path='/auth/login' element={<Login />} />
-        <Route path='/auth/register' element={<Register />} />
-        <Route path='/auth/passwordreset' element={<PasswordReset />} />
+        <Route path='/admin/auth/login' element={<Login />} />
+        <Route path='/admin/auth/register' element={<Register />} />
+        <Route path='/admin/auth/passwordreset' element={<PasswordReset />} />
 
         {!isAdminPage && (
           <>
