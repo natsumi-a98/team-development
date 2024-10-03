@@ -2,13 +2,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
 .password-reset-container {
   width: 100%;
-  max-width: 400px;
-  text-align: left;
 }
 
 .password-reset-link {
@@ -16,6 +13,7 @@
   color: #233026;
   text-decoration: none;
   display: block;
+  margin-bottom: 80px;
 }
 
 .password-reset-link:hover {

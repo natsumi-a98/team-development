@@ -1,8 +1,8 @@
 .register-container {
   width: 100%;
-  max-width: 400px;
   text-align: left;
   font-size: 16px;
+  margin-bottom: 30px;
 }
 
 .register-link {
@@ -14,4 +14,25 @@
 
 .register-link:hover {
   text-decoration: underline;
+}
+
+.login-button {
+  width: 300px;
+}
+
+.home-link {
+  color: #233026;
+  text-decoration: none;
+  margin: auto 0;
+}
+
+.home-link:hover {
+  text-decoration: underline;
+}
+
+.button-container {
+  display: flex;
+  width: 100%;
+  margin: 0;
+  justify-content: flex-start;
 }

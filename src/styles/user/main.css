@@ -51,9 +51,9 @@ label {
 .form-field {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   width: 100%;
-  max-width: 400px;
+  max-width: 550px;
 }
 
 label {
@@ -62,16 +62,17 @@ label {
 }
 
 .auth-container {
+  width: 550px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding: 0 20px;
-  text-align: center;
+  align-items: flex-start;
+  margin: 0 auto;
+  text-align: left;
 }
 
 .auth-title {
-  margin-bottom: 20px;
+  margin: 80px 0;
 }
 
 .auth-form {
@@ -81,7 +82,6 @@ label {
 
 .form-section {
   width: 100%;
-  max-width: 400px;
 }
 
 /* 管理者側 */

@@ -21,9 +21,7 @@ const Login: React.FC = () => {
   return (
     <div className='container'>
       <div className='auth-container'>
-        <div>
-          <h4 className='auth-title'>ログイン</h4>
-        </div>
+        <h4 className='auth-title'>ログイン</h4>
         <div className='register-container'>
           <Link to='/register' className='register-link'>
             アカウントを新規作成する
@@ -34,12 +32,17 @@ const Login: React.FC = () => {
             setEmail(email);
             setPassword(password);
           }} />
+        </section>
+        <div className="button-container">
           <BaseButton
             text='ログイン'
             onClick={handleLogin}
             className='login-button'
           />
-        </section>
+          <Link to='/' className='home-link'>
+            ショップに戻る
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -42,7 +42,7 @@ const CategoryList: React.FC = () => {
         ))}
       </div>
 
-      <div className='button-container'>
+      <div className='user-button-container'>
         <BaseButton
           text='すべてのカテゴリを見る'
           onClick={handleViewAllCategoryList}
