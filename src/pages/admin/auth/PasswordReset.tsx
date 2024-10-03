@@ -4,10 +4,10 @@ import PasswordResetForm from '../../../components/auth/PasswordResetForm';
 import BaseButton from '../../../components/user/BaseButton';
 
 const PasswordReset: React.FC = () => {
-  const [email, setEmail] = useState<string>('');
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [message, setMessage] = useState<string>('');
-  const navigate = useNavigate();
+  const [email, setEmail] = useState<string>(''); // メールアドレスの状態管理
+  const [isLoading, setIsLoading] = useState<boolean>(false); // ローディング状態
+  const [message, setMessage] = useState<string>(''); // メッセージ表示用
+  const navigate = useNavigate(); // ページ遷移用
 
   // メールアドレスを取得するハンドラー
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -56,13 +56,14 @@ const PasswordReset: React.FC = () => {
         </p>
         <section className='form-section'>
           <PasswordResetForm
-            email={email}
-            onEmailChange={handleEmailChange}
+            email={email} // メールアドレスの状態を渡す
+            onEmailChange={handleEmailChange} // メールアドレスが変更されたときに呼ばれる
           />
         </section>
+        {message && <p className="message">{message}</p>} {/* メッセージ表示 */}
         <div className="auth-button-container">
           <BaseButton
-            text='送信'
+            text={isLoading ? '送信中...' : '送信'}
             onClick={handleReset}
             className='auth-button'
           />

@@ -11,7 +11,9 @@ type BaseButtonProps = {
 
 const BaseButton: React.FC<BaseButtonProps> = ({ text, onClick, className = '', style }) => {
   return (
-    <button className={`base-button ${className}`} onClick={onClick} style={style}>
+    <button
+      className={`base-button ${className}`}
+      onClick={onClick} style={style}>
       {text}
     </button>
   );
