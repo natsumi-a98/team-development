@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import LoginForm from '../../../components/auth/LoginForm';
 import BaseButton from '../../../components/user/BaseButton';
-import '../../../styles/login.css';
+import '../../../styles/Login.css';
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
