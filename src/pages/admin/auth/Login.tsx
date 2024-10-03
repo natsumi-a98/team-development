@@ -33,13 +33,13 @@ const AdminLogin: React.FC = () => {
             setPassword(password);
           }} />
         </section>
-        <div className="button-container">
+        <div className="auth-button-container">
           <BaseButton
             text='ログイン'
             onClick={handleLogin}
-            className='login-button'
+            className='auth-button'
           />
-          <Link to='/' className='home-link'>
+          <Link to='/' className='back-link'>
             ショップに戻る
           </Link>
         </div>

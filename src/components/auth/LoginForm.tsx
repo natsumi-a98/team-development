@@ -16,7 +16,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onChange }) => {
   }, [email, password, onChange]);
 
   return (
-    <form className='login-form-container'>
+    <form className='auth-form-container'>
       <div className='form-field'>
         <label htmlFor='email'>メールアドレス</label>
         <input
@@ -45,7 +45,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onChange }) => {
       </div>
 
       <div className='password-reset-container'>
-        <Link to='/passwordreset' className='password-reset-link'>
+        <Link to='/admin/auth/passwordreset' className='password-reset-link'>
           パスワードを忘れた方
         </Link>
       </div>

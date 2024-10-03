@@ -40,6 +40,7 @@ import CategoryAdd from './pages/admin/CategoryAdd';
 import AdminLogin from './pages/admin/auth/Login';
 import AdminRegister from './pages/admin/auth/Register';
 import PasswordReset from './pages/admin/auth/PasswordReset';
+import CreateNewPassword from './pages/admin/auth/CreateNewPassword';
 
 const App: React.FC = () => {
   const location = useLocation();
@@ -100,6 +101,7 @@ const App: React.FC = () => {
         <Route path='/admin/auth/login' element={<AdminLogin />} />
         <Route path='/admin/auth/register' element={<AdminRegister />} />
         <Route path='/admin/auth/passwordreset' element={<PasswordReset />} />
+        <Route path='/admin/auth/createnewpassword' element={<CreateNewPassword />} />
 
         {!isAdminPage && (
           <>

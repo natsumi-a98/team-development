@@ -1,9 +1,12 @@
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import BaseButton from '../../../components/user/BaseButton';
 import RegisterForm from '../../../components/auth/RegisterForm';
-import '../../../styles/Register.css'
 
 const AdminRegister: React.FC = () => {
+  // アカウント作成処理の実装など
+
+
   return (
     <div className='container'>
       <div className='auth-container'>
@@ -13,12 +16,17 @@ const AdminRegister: React.FC = () => {
         <section className='form-section'>
           <RegisterForm />
         </section>
-        <BaseButton
-          text='アカウント作成'
-          onClick={() => {
-          }}
-          className='register-button'
-        />
+        <div className="auth-button-container">
+          <BaseButton
+            text='アカウント作成'
+            onClick={() => {
+            }}
+            className='auth-button'
+          />
+          <Link to='/' className='back-link'>
+            ショップに戻る
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -15,24 +15,3 @@
 .register-link:hover {
   text-decoration: underline;
 }
-
-.login-button {
-  width: 300px;
-}
-
-.home-link {
-  color: #233026;
-  text-decoration: none;
-  margin: auto 0;
-}
-
-.home-link:hover {
-  text-decoration: underline;
-}
-
-.button-container {
-  display: flex;
-  width: 100%;
-  margin: 0;
-  justify-content: flex-start;
-}

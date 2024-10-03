@@ -2,7 +2,7 @@ import React from 'react';
 
 const RegisterForm: React.FC = () => {
   return (
-    <div className='register-form-container'>
+    <div className='auth-form-container'>
       <div className='form-field'>
         <label>姓</label>
         <input className='auth-form' type='text' placeholder='姓' name='email'/>
