@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
           <li><Link to='/privacypolicy'>プライバシーポリシー</Link></li>
           <li><Link to='/refundpolicy'>返金ポリシー</Link></li>
           <li><Link to='/contact'>お問い合せ</Link></li>
-          <li><Link to='/auth/login'>管理者ページ</Link></li>
+          <li><Link to='/admin/auth/login'>管理者ページ</Link></li>
         </ul>
       </div>
       <div className='footer-brand'>
