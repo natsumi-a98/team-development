@@ -1,0 +1,38 @@
+.category-list-grid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 30px 45px;
+  flex-wrap: wrap;
+}
+
+.category-card {
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.category-card img {
+  max-width: 100%;
+  height: auto;
+  background-color: #eee;
+  object-fit: cover;  /* 画像があれば正しく表示 */
+}
+
+.category-card h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.category-card:hover {
+  transform: scale(1.05);
+  /* ホバー時に少し拡大 */
+}
+
+.button-container {
+  margin: 30px 0 80px 0;
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+}
