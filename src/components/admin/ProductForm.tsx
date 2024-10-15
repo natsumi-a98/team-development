@@ -1,8 +1,11 @@
-// 商品追加、編集用フォーム
 import React, { useState } from 'react';
 import '../../styles/admin/ProductForm.css';
 
-const ProductForm: React.FC = () => {
+interface ProductFormProps {
+  onAddProduct: (productData: FormData) => void; // プロダクトデータを受け取る関数
+}
+
+const ProductForm: React.FC<ProductFormProps> = ({ onAddProduct }) => {
   const [productName, setProductName] = useState('');
   const [category, setCategory] = useState('');
   const [description, setDescription] = useState('');
@@ -10,15 +13,34 @@ const ProductForm: React.FC = () => {
   const [price, setPrice] = useState('');
   const [images, setImages] = useState<File[]>([]);
 
-  // 画像追加の処理
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       setImages([...images, ...Array.from(e.target.files)]);
     }
   };
 
+  const handleImageDelete = (indexToDelete: number) => {
+    setImages((prevImages) => prevImages.filter((_, index) => index !== indexToDelete));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append('productName', productName);
+    formData.append('category', category);
+    formData.append('description', description);
+    formData.append('instructions', instructions);
+    formData.append('price', price);
+
+    images.forEach((image, index) => {
+      formData.append(`image_${index}`, image);
+    });
+
+    onAddProduct(formData); // 追加されたデータを上位コンポーネントに渡す
+  };
+
   return (
-    <form className='product-add-form'>
+    <form className='product-add-form' onSubmit={handleSubmit}>
       <div className='product-form-field'>
         <label htmlFor='productName'>商品名</label>
         <input
@@ -43,25 +65,44 @@ const ProductForm: React.FC = () => {
 
       <div className='product-form-field'>
         <label>商品画像</label>
-        <div className='image-upload'>
-          <div className='image-preview'>
-            {images.map((image, index) => (
-              <img
-                key={index}
-                src={URL.createObjectURL(image)}
-                alt={`商品画像 ${index + 1}`}
-                className='preview-image'
-              />
-            ))}
+        <div className='image-upload-container'>
+          <div className='drag-and-drop-area'>
+            {images.length === 0 && (
+              <p className='drag-and-drop-text'>画像をドラッグ&ドロップ</p>
+            )}
+            <div className='image-preview'>
+              {images.map((image, index) => (
+                <div key={index} className='preview-container'>
+                  <img
+                    src={URL.createObjectURL(image)}
+                    alt={`商品画像 ${index + 1}`}
+                    className='product-preview-image'
+                  />
+                  <button
+                    type='button'
+                    className='delete-image-button'
+                    onClick={() => handleImageDelete(index)}
+                  >
+                    &times;
+                  </button>
+                </div>
+              ))}
+            </div>
           </div>
           <input
             type='file'
             accept='image/*'
             multiple
+            className='image-upload-input'
             onChange={handleImageChange}
+            id='imageInput'
           />
-          <button type='button' className='add-image-button'>
-            画像を追加
+          <button
+            type='button'
+            className='add-image-button'
+            onClick={() => document.getElementById('imageInput')?.click()}
+          >
+            ファイル選択
           </button>
         </div>
       </div>
@@ -102,61 +143,3 @@ const ProductForm: React.FC = () => {
 };
 
 export default ProductForm;
-
-// ProductForm.tsx以下サーバーサイドとの連携する場合のコード
-// import React, { useState } from 'react';
-// import '../../styles/admin/ProductForm.css';
-
-// interface ProductFormProps {
-//   setProductData: React.Dispatch<React.SetStateAction<any>>;
-// }
-
-// const ProductForm: React.FC<ProductFormProps> = ({ setProductData }) => {
-//   const [productName, setProductName] = useState('');
-//   const [category, setCategory] = useState('');
-//   const [description, setDescription] = useState('');
-//   const [instructions, setInstructions] = useState('');
-//   const [price, setPrice] = useState('');
-//   const [images, setImages] = useState<File[]>([]);
-
-//   // フォームのデータが更新された時に親コンポーネントへ通知
-//   const handleFormChange = () => {
-//     setProductData({
-//       productName,
-//       category,
-//       description,
-//       instructions,
-//       price,
-//       images
-//     });
-//   };
-
-//   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-//     if (e.target.files) {
-//       setImages([...images, ...Array.from(e.target.files)]);
-//       handleFormChange();
-//     }
-//   };
-
-//   return (
-//     <form className='product-add-form'>
-//       <div className='product-form-field'>
-//         <label htmlFor='productName'>商品名</label>
-//         <input
-//           type='text'
-//           id='productName'
-//           value={productName}
-//           onChange={(e) => {
-//             setProductName(e.target.value);
-//             handleFormChange();
-//           }}
-//           placeholder='商品名'
-//           required
-//         />
-//       </div>
-//       {/* 他のフィールドも同様に実装 */}
-//     </form>
-//   );
-// };
-
-// export default ProductForm;

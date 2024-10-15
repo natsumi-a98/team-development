@@ -36,6 +36,7 @@ import CustomerManagement from './pages/admin/CustomerManagement';
 import ContactManagement from './pages/admin/ContactManagement';
 import ProductAdd from './pages/admin/ProductAdd';
 import CategoryAdd from './pages/admin/CategoryAdd';
+import DiaryAdd from './pages/admin/DiaryAdd';
 // 管理者側ユーザー認証
 import AdminLogin from './pages/admin/auth/Login';
 import AdminRegister from './pages/admin/auth/Register';
@@ -63,7 +64,8 @@ const App: React.FC = () => {
     '/admin/notice-management',
     '/admin/logout',
     '/admin/product-add',
-    '/admin/category-add'
+    '/admin/category-add',
+    '/admin/diary-add'
   ];
   const isAdminPage = adminRoutes.some(route => location.pathname.startsWith(route));
 
@@ -87,6 +89,7 @@ const App: React.FC = () => {
                 <Route path='/admin/contact-management' element={<ContactManagement />} />
                 <Route path='/admin/product-add' element={<ProductAdd />} />
                 <Route path='/admin/category-add' element={<CategoryAdd />} />
+                <Route path='/admin/diary-add' element={<DiaryAdd />} />
               </Routes>
             </div>
           </div>

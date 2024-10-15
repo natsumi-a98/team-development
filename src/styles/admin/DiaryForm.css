@@ -1,33 +1,38 @@
-.product-add-form {
+.diary-add-form {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   width: 650px;
+  height: 100%;
 }
 
-.product-form-field {
+.diary-form-field {
   display: flex;
   align-items: center;
   width: 100%;
   margin-bottom: 30px;
 }
 
-.product-form-field.last-field {
+.diary-form-field.last-field {
   margin-bottom: 0;
 }
 
-.product-form-field label {
+.diary-form-field label {
   font-size: 16px;
   width: 100px;
   text-align: right;
   margin-right: 60px;
 }
 
-.product-form-field input,
-.product-form-field textarea {
+.diary-form-field input,
+.diary-form-field textarea {
   flex-grow: 1;
   padding: 8px;
   height: 24px;
+}
+
+.diary-form-field textarea {
+  height: 100%;
+  padding: 8px;
 }
 
 .drag-and-drop-area {
@@ -65,7 +70,7 @@
   margin-right: 15px;
 }
 
-.product-preview-image {
+.diary-preview-image {
   width: 100px;
   height: 100px;
   object-fit: cover;

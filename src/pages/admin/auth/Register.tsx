@@ -1,10 +1,14 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import BaseButton from '../../../components/user/BaseButton';
 import RegisterForm from '../../../components/auth/RegisterForm';
 
+
 const AdminRegister: React.FC = () => {
   // アカウント作成処理の実装など
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
 
   return (
@@ -14,7 +18,9 @@ const AdminRegister: React.FC = () => {
           <h4 className='auth-title'>アカウントを作成する</h4>
         </div>
         <section className='form-section'>
-          <RegisterForm />
+          <RegisterForm
+            // onSubmit={handleRegister}
+          />
         </section>
         <div className="auth-button-container">
           <BaseButton

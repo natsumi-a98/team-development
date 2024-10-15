@@ -1,68 +1,47 @@
-// カテゴリ管理ページ
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import BaseButton from '../../components/user/BaseButton';
+import React, { useEffect, useState } from 'react';
 
+interface Category {
+  id: number;
+  name: string;
+  description: string;
+  image_url?: string;
+}
 
 const CategoryManagement: React.FC = () => {
-  const navigate = useNavigate();
+  const [categories, setCategories] = useState<Category[]>([]);
 
-  const handleAddCategory = () => {
-    navigate('/admin/category-add');
+  // カテゴリをバックエンドから取得する関数
+  const fetchCategories = async () => {
+    try {
+      const response = await fetch('/api/categories');  // カテゴリ取得のAPIエンドポイント
+      const data = await response.json();
+      setCategories(data);
+    } catch (error) {
+      console.error('カテゴリの取得に失敗しました:', error);
+    }
   };
 
+  // ページが読み込まれたときにカテゴリデータを取得
+  useEffect(() => {
+    fetchCategories();
+  }, []);
+
   return (
-    <div className='admin-container'>
-      <div className='admin-top-container'>
-        <h2 className='admin-title'>カテゴリ一覧</h2>
-        <BaseButton
-          text='カテゴリ登録'
-          onClick={handleAddCategory}
-          className='add-Category-button-top'
-        />
-      </div>
+    <div className='category-management'>
+      <h2>カテゴリ管理</h2>
+      <ul>
+        {categories.map((category) => (
+          <li key={category.id}>
+            <p>カテゴリ名: {category.name}</p>
+            <p>説明: {category.description}</p>
+            {category.image_url && (
+              <img src={category.image_url} alt={category.name} width="100" />
+            )}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
 
 export default CategoryManagement;
-
-// CategoryManagement.tsx以下サーバーサイドとの連携する場合のコード
-// import React, { useEffect, useState } from 'react';
-// import '../../styles/admin/CategoryManagement.css';
-
-// const CategoryManagement: React.FC = () => {
-//   const [Categorys, setCategorys] = useState([]);
-
-//   useEffect(() => {
-//     const fetchCategorys = async () => {
-//       try {
-//         const response = await fetch('/api/Categorys');
-//         const data = await response.json();
-//         setCategorys(data);
-//       } catch (error) {
-//         console.error('商品一覧の取得に失敗しました', error);
-//       }
-//     };
-
-//     fetchCategorys();
-//   }, []);
-
-//   return (
-//     <div className='Category-management-container'>
-//       <h2>商品管理</h2>
-//       <div className='Category-list'>
-//         {Categorys.map((Category: any) => (
-//           <div key={Category.id} className='Category-item'>
-//             <h3>{Category.CategoryName}</h3>
-//             <p>{Category.description}</p>
-//             <p>価格: ¥{Category.price}</p>
-//             <img src={Category.imageUrl} alt={Category.CategoryName} />
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default CategoryManagement;

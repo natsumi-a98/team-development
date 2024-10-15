@@ -1,5 +1,4 @@
-// 商品追加
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import BaseButton from '../../components/user/BaseButton';
 import ProductForm from '../../components/admin/ProductForm';
@@ -7,9 +6,29 @@ import '../../styles/admin/ProductAdd.css';
 
 const ProductAdd: React.FC = () => {
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false); // ローディング状態を管理
 
-  const handleAddProduct = () => {
-    navigate('/admin/product-add');
+  // 商品登録処理
+  const handleAddProduct = async (formData: FormData) => {
+    setLoading(true); // ローディング開始
+    try {
+      const response = await fetch('/api/products', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error('商品登録に失敗しました。');
+      }
+
+      // 成功したら商品管理ページに遷移
+      navigate('/admin/productmanagement');
+    } catch (error) {
+      console.error('商品追加エラー:', error);
+      alert('商品登録に失敗しました。'); // エラーメッセージの表示
+    } finally {
+      setLoading(false); // ローディング終了
+    }
   };
 
   return (
@@ -18,10 +37,10 @@ const ProductAdd: React.FC = () => {
         <h2 className='admin-title'>商品登録</h2>
       </div>
       <div className="admin-form">
-        <ProductForm />
+        <ProductForm onAddProduct={handleAddProduct} />
         <BaseButton
           text='商品登録'
-          onClick={handleAddProduct}
+          onClick={() => { /* 追加の処理があればここに */ }} // ここは元の処理を維持
           className='add-product-button'
         />
       </div>
@@ -30,73 +49,3 @@ const ProductAdd: React.FC = () => {
 };
 
 export default ProductAdd;
-
-// ProductAdd.tsx以下サーバーサイドとの連携する場合のコード
-// import React, { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
-// import BaseButton from '../../components/user/BaseButton';
-// import ProductForm from '../../components/admin/ProductForm';
-// import '../../styles/admin/ProductAdd.css';
-
-// const ProductAdd: React.FC = () => {
-//   const navigate = useNavigate();
-
-//   // フォームのデータを保持する状態変数
-//   const [productData, setProductData] = useState({
-//     productName: '',
-//     category: '',
-//     description: '',
-//     instructions: '',
-//     price: '',
-//     images: [] as File[]
-//   });
-
-//   const handleAddProduct = async () => {
-//     try {
-//       // APIへデータを送信
-//       const formData = new FormData();
-//       formData.append('productName', productData.productName);
-//       formData.append('category', productData.category);
-//       formData.append('description', productData.description);
-//       formData.append('instructions', productData.instructions);
-//       formData.append('price', productData.price);
-
-//       productData.images.forEach((image, index) => {
-//         formData.append(`images[${index}]`, image);
-//       });
-
-//       const response = await fetch('/api/products', {
-//         method: 'POST',
-//         body: formData,
-//       });
-
-//       if (response.ok) {
-//         // 商品管理ページへリダイレクト
-//         navigate('/admin/product-management');
-//       } else {
-//         console.error('商品登録に失敗しました');
-//       }
-//     } catch (error) {
-//       console.error('エラーが発生しました', error);
-//     }
-//   };
-
-//   return (
-//     <div className='admin-container'>
-//       <div className='admin-top-container'>
-//         <h2 className='admin-title'>商品登録</h2>
-//       </div>
-//       <div className="admin-form">
-//         {/* フォームのデータを親コンポーネントで保持 */}
-//         <ProductForm setProductData={setProductData} />
-//         <BaseButton
-//           text='商品登録'
-//           onClick={handleAddProduct}
-//           className='add-product-button'
-//         />
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default ProductAdd;

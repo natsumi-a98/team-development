@@ -2,6 +2,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import BaseButton from '../../components/user/BaseButton';
+import '../../styles/admin/ProductManagement.css'
 
 
 const ProductManagement: React.FC = () => {
@@ -26,41 +27,54 @@ const ProductManagement: React.FC = () => {
 };
 
 export default ProductManagement;
-
-// ProductManagement.tsx以下サーバーサイドとの連携する場合のコード
 // import React, { useEffect, useState } from 'react';
-// import '../../styles/admin/ProductManagement.css';
+
+// interface Product {
+//   id: number;
+//   name: string;
+//   category: string;
+//   description: string;
+//   instructions: string;
+//   price: number;
+//   image_url?: string; // 画像URL
+// }
 
 // const ProductManagement: React.FC = () => {
-//   const [products, setProducts] = useState([]);
+//   const [products, setProducts] = useState<Product[]>([]);
 
+//   // 商品をバックエンドから取得する関数
+//   const fetchProducts = async () => {
+//     try {
+//       const response = await fetch('/api/products'); // 商品取得のAPIエンドポイント
+//       const data = await response.json();
+//       setProducts(data);
+//     } catch (error) {
+//       console.error('商品取得に失敗しました:', error);
+//     }
+//   };
+
+//   // ページが読み込まれたときに商品データを取得
 //   useEffect(() => {
-//     const fetchProducts = async () => {
-//       try {
-//         const response = await fetch('/api/products');
-//         const data = await response.json();
-//         setProducts(data);
-//       } catch (error) {
-//         console.error('商品一覧の取得に失敗しました', error);
-//       }
-//     };
-
 //     fetchProducts();
 //   }, []);
 
 //   return (
-//     <div className='product-management-container'>
+//     <div className='product-management'>
 //       <h2>商品管理</h2>
-//       <div className='product-list'>
-//         {products.map((product: any) => (
-//           <div key={product.id} className='product-item'>
-//             <h3>{product.productName}</h3>
-//             <p>{product.description}</p>
+//       <ul>
+//         {products.map((product) => (
+//           <li key={product.id}>
+//             <h3>{product.name}</h3>
+//             <p>カテゴリ: {product.category}</p>
+//             <p>説明: {product.description}</p>
+//             <p>育て方: {product.instructions}</p>
 //             <p>価格: ¥{product.price}</p>
-//             <img src={product.imageUrl} alt={product.productName} />
-//           </div>
+//             {product.image_url && (
+//               <img src={product.image_url} alt={product.name} width="100" />
+//             )}
+//           </li>
 //         ))}
-//       </div>
+//       </ul>
 //     </div>
 //   );
 // };

@@ -1,0 +1,14 @@
+.admin-form {
+  display: flex;
+  position: relative;
+  justify-content: flex-start;
+  align-items: center;
+  width: calc(100% - 160px);
+  margin: 0 auto;
+}
+
+.add-category-button {
+  align-self: flex-end;
+  cursor: pointer;
+  width: 300px;
+}

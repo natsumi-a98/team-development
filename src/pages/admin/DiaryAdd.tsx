@@ -1,10 +1,11 @@
-// 日記管理ページ
+// 日記追加
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import BaseButton from '../../components/user/BaseButton';
-import '../../styles/admin/DiaryManagement.css';
+import DairyForm from '../../components/admin/DiaryForm';
+import '../../styles/admin/DiaryAdd.css';
 
-const DiaryManagement: React.FC = () => {
+const DiaryAdd: React.FC = () => {
   const navigate = useNavigate();
 
   const handleAddDiary = () => {
@@ -14,15 +15,18 @@ const DiaryManagement: React.FC = () => {
   return (
     <div className='admin-container'>
       <div className='admin-top-container'>
-        <h2 className='admin-title'>日記一覧</h2>
+        <h2 className='admin-title'>日記登録</h2>
+      </div>
+      <div className="admin-form">
+        <DairyForm />
         <BaseButton
           text='日記登録'
           onClick={handleAddDiary}
-          className='add-diary-button-top'
+          className='add-diary-button'
         />
       </div>
     </div>
   );
 };
 
-export default DiaryManagement;
+export default DiaryAdd;
